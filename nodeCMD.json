@@ -1,0 +1,40 @@
+{
+  "initialize_a_project" : "node init",
+
+  "package" : {
+    "express" : "npm install express",
+    "express body-parser morgan" : "npm install express body-parser morgan",
+    "mongoose" : {
+      "to install" : "npm install mongoose",
+      "desc" : "mongodb driver/connector"
+    },
+    "nodemon" : {
+      "to install" : "npm install -g nodemon",
+      "desc" : "nodemon simply wraps your node application and keeps an eye on any files that have changed",
+      "to run" : "nodemon filename"
+    },
+    "bcrypt" : {
+      "to install" : "npm install bcrypt-nodejs",
+      "desc" : "to hash the password"
+    },
+    "token_based app" : {
+      "desc" : "not like session which is not scalable-facebook, github and instagram use token_base approach",
+      "to install" : "npm install jsonwebtoken"
+    },
+    "bluebird" : {
+      "desc" : "promise library",
+      "to install" : "npm install bluebird"
+    }
+  },
+
+  "more":{
+    "to save" : "--save",
+    "to run local server" : "node fileServerName.js"
+  },
+
+  "web storm" : "to enable node core library, go to setting, search for node and npm, enable it",
+  "Rest API test" : "use chrome extension : Postman",
+  "notes" : {
+    "Promise" : "Do not use Return in either then or catch"
+  }
+}
