@@ -15,16 +15,17 @@ angular.module('mainCtrl', [])
         vm.proccess = true
         vm.error = ''
         Auth.login(vm.loginData.username, vm.loginData.password)
-            .success(function (data) {
+            .then(function (data) {
+                console.log(data)
                 vm.proccess = false
                 Auth.getUser()
                     .then(function (data) {
+                        console.log(data)
                         vm.user = data.data
                     })
-                if(data.success)
-                    $location.path('/')
-                else
-                    vm.error = data.message
+                $location.path('/')
+            }, function (err) {
+                vm.error = err
             })
     }
     vm.doLogout = function () {
