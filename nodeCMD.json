@@ -43,10 +43,12 @@
       "tool" : "heroku toolbet",
       "cmd" : {
         "login" : "heroku login",
-        "create" : "heroku create"
+        "create" : "heroku create",
+        "deploy" : "git push heroku master"
       }
     },
     "tool" : "github",
-    "info" : "https://fierce-springs-41837.herokuapp.com/ | https://git.heroku.com/fierce-springs-41837.git"
+    "app url" : "https://fierce-springs-41837.herokuapp.com",
+    "heroku.com git" : "https://git.heroku.com/fierce-springs-41837.git"
   }
 }
