@@ -41,7 +41,12 @@
     "server" : {
       "name" : "heroku",
       "tool" : "heroku toolbet",
+      "cmd" : {
+        "login" : "heroku login",
+        "create" : "heroku create"
+      }
     },
-    "tool" : "github"
+    "tool" : "github",
+    "info" : "https://fierce-springs-41837.herokuapp.com/ | https://git.heroku.com/fierce-springs-41837.git"
   }
 }
