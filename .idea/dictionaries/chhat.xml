@@ -4,10 +4,12 @@
       <w>bcrypt</w>
       <w>instagram</w>
       <w>jsonwebtoken</w>
+      <w>jumbotron</w>
       <w>mongo</w>
       <w>mongod</w>
       <w>nodemon</w>
       <w>signup</w>
+      <w>singin</w>
     </words>
   </dictionary>
 </component>

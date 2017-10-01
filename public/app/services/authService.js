@@ -24,18 +24,30 @@ angular.module('authService', [])
         })
     }
     authFactory.logout = function () {
-        AuthToken.setToken()
+        return new Promise((resolve, reject)=>{
+            if(AuthToken.setToken()){
+                resolve("Successful logged out")
+            }else{
+                reject("fail to log user out")
+            }
+        })
+
     }
     authFactory.isLoggedIn = function () {
-        return !!AuthToken.getToken();
+        console.log("Attention : token from Auth.getToken", AuthToken.getToken())
+        if(AuthToken.getToken())
+            return true
+        else return false;
+        // return !!AuthToken.getToken();
     }
     authFactory.getUser = function () {
         const token = AuthToken.getToken()
         console.log(token)
         if(token)
-            return $http.get('/api/me', {
-                headers : {'x-access-token' : token}
-            })
+            return $http.get('/api/me')
+            //     , {
+            //     headers : {'x-access-token' : token}
+            // })
         else return $q.reject({message : "User has no token"})
     }
     return authFactory
@@ -49,7 +61,10 @@ angular.module('authService', [])
         console.log('setToken : ', token)
         if(token)
             $window.localStorage.setItem('token', token)
-        else $window.localStorage.removeItem('token')
+        else {
+            $window.localStorage.removeItem('token')
+            return true
+        }
     }
     return authTokenFactory
 })

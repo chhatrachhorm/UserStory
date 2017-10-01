@@ -1,7 +1,9 @@
 angular.module('mainCtrl', [])
 .controller('MainController', function ($rootScope, $location, Auth) {
     const vm = this
-    vm.loggedIn = Auth.isLoggedIn()
+    vm.loggedIn = function(){
+        return Auth.isLoggedIn()
+    }
     // like listener
     $rootScope.$on('$routeChangeStart', function () {
         vm.loggedIn = Auth.isLoggedIn()
@@ -31,8 +33,10 @@ angular.module('mainCtrl', [])
     vm.doLogout = function () {
         Auth.logout()
             .then(function () {
-                $location.path('/logout')
+                $location.path('/login')
             })
-
+            .catch(function () {
+                console.log("Failure occur")
+            })
     }
 })

@@ -26,7 +26,12 @@ module.exports = function (app, express) {
                 res.send(err)
                 return
             }
-            res.json({message : "User has been create"})
+            const token = createToken(user)
+            res.json({
+                success : true,
+                message : "Created User Successfully",
+                token : token
+            })
         })
     })
 

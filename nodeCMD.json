@@ -36,5 +36,12 @@
   "Rest API test" : "use chrome extension : Postman",
   "notes" : {
     "Promise" : "Do not use Return in either then or catch"
+  },
+  "deploy" : {
+    "server" : {
+      "name" : "heroku",
+      "tool" : "heroku toolbet",
+    },
+    "tool" : "github"
   }
 }
